@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-//    "build": "webpack --config configs/webpack.build.js",
-//    "dev": "webpack-dev-server --config configs/webpack.dev.js",
-//    "check_version": "webpack -v"
+    "start": "webpack --config webpack/webpack.config.js --watch ",
+    "build": "webpack --config webpack/webpack.config.js -p"
   },
   "keywords": [
     "es6",
@@ -14,5 +13,11 @@
     "template"
   ],
   "author": "GmanPark@2017",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "webpack": "^2.2.0"
+  }
 }
