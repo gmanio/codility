@@ -4,7 +4,7 @@
  * @description Bootstrap for app.
  */
 
-import './style.scss';
+import './assets/style.scss';
 import {A} from './module/A';
 
 function main() {

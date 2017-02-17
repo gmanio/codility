@@ -7,10 +7,16 @@ const webpack = require('webpack');
 const path = require('path');
 const baseDir = process.cwd();
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const extractSass = new ExtractTextPlugin({
+const extractSASS = new ExtractTextPlugin({
     filename: "[name].[contenthash].css",
-    disable: process.env.NODE_ENV === "development"
+    // disable: process.env.NODE_ENV === "development"
+});
+
+const extractCSS = new ExtractTextPlugin({
+    filename: "[name].bundle.css",
+    // disable: process.env.NODE_ENV === "development"
 });
 
 const config = {
@@ -21,7 +27,7 @@ const config = {
     },
     output: {
         path: path.resolve(baseDir, 'dist'),
-        publicPath: '/dist/',
+        // publicPath: '/dist/',
         filename: '[name].bundle.js'
     },
     module: {
@@ -39,11 +45,24 @@ const config = {
                 }]
             },
             {
+                test: /\.css$/,
+                use: extractCSS.extract(['css-loader', 'sass-loader'])
+            },
+            {
                 test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: extractSASS.extract(['css-loader', 'sass-loader'])
             }
         ]
-    }
+    },
+    plugins: [
+        extractSASS,
+        extractCSS,
+        new HtmlWebpackPlugin({
+            title: 'Gman',
+            filename: 'index.html',
+            template: path.resolve(baseDir, 'src/assets/index.html')
+        })
+    ]
 }
 
 module.exports = config;
