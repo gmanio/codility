@@ -3,7 +3,7 @@
  * @author: Gman Park
  */
 
-export class A {
+class A {
     constructor() {
         this.printConsoleLogo();
     }
@@ -13,3 +13,5 @@ export class A {
         setTimeout(console.log.bind(console, "%cDevTools@2017", "font:2em sans-serif;color:#333;"), 0);
     }
 }
+
+export {A};

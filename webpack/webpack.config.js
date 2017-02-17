@@ -61,21 +61,21 @@ const config = {
             title: 'Gman',
             filename: 'index.html',
             template: path.resolve(baseDir, 'src/assets/index.html')
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ],
 
     devServer: {
         contentBase: path.join(__dirname, "dist"),
-        compress: true,
-        historyApiFallback: true,
-        // host: "0.0.0.0",
+        host: "0.0.0.0",
         port: 9000,
         hot: true,
-        inline: false,
-        clientLogLevel: "info",
-        // noInfo: true,
-        // quiet: true,
-        // open: true,
+        inline: true,
+        compress: true,
+        noInfo: true,
+        quiet: true,
+        open: true,
+        historyApiFallback: true,
         watchOptions: {
             poll: true
         }

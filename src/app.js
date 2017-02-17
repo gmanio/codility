@@ -8,9 +8,9 @@ import './assets/style.scss';
 import {A} from './module/A';
 
 function main() {
-    document.title = 'ECMAscript';
+    document.title = 'Codility';
 
-    const moduleA = new A();
+    const Problem1 = new A();
 }
 
 document.addEventListener('DOMContentLoaded', main);
