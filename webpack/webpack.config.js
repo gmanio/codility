@@ -72,7 +72,7 @@ const config = {
         hot: true,
         inline: true,
         compress: true,
-        noInfo: true,
+        // noInfo: true,
         quiet: true,
         open: true,
         historyApiFallback: true,
