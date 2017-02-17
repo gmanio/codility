@@ -11,8 +11,7 @@
  */
 class BinaryGap {
     constructor() {
-        console.log("answer" + this.solution(561892));
-
+        this.solution(561892);
     }
 
     solution(N) {
@@ -27,9 +26,11 @@ class BinaryGap {
         let prevItem = arrBin[0];
 
         for (let i = 1; i < arrBin.length; i++) {
+
             if (prevItem != arrBin[i]) {
                 count += 1;
             } else {
+
                 if (totalCount < count) {
                     totalCount = count;
                 }
@@ -42,4 +43,4 @@ class BinaryGap {
     }
 }
 
-new BinaryGap()
+new BinaryGap();
