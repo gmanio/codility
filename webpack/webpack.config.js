@@ -62,7 +62,24 @@ const config = {
             filename: 'index.html',
             template: path.resolve(baseDir, 'src/assets/index.html')
         })
-    ]
+    ],
+
+    devServer: {
+        contentBase: path.join(__dirname, "dist"),
+        compress: true,
+        historyApiFallback: true,
+        // host: "0.0.0.0",
+        port: 9000,
+        hot: true,
+        inline: false,
+        clientLogLevel: "info",
+        // noInfo: true,
+        // quiet: true,
+        // open: true,
+        watchOptions: {
+            poll: true
+        }
+    }
 }
 
 module.exports = config;
